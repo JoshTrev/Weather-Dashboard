@@ -16,6 +16,18 @@
     height: 225px;
 }
 
+/* .currentLocationStatsIcon{
+    width: 100%;
+    height: 100%;
+} */
+
+#icon{
+    height: 200px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #locationSearchBar{
     margin-bottom: 15px;
 }

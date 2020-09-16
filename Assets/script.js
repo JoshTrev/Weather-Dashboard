@@ -22,25 +22,25 @@ var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
 
 // If Storage is Empty, Create New Storage
 
-if (searchHistory == null){
+if (searchHistory == null) {
     var searchHistory = [];
 }
 
 // Create Previous Search Results
 
-for (var i = 0; i < searchHistory.length; i++){
+for (var i = 0; i < searchHistory.length; i++) {
 
-// Create a new card to store previous search
-var newCard = $("<div class='card rounded shadow-sm newCard font-weight-bold'></div>");
+    // Create a new card to store previous search
+    var newCard = $("<div class='card rounded shadow-sm newCard font-weight-bold'></div>");
 
-// Add the new card
-$("#previousSearches").prepend(newCard);
+    // Add the new card
+    $("#previousSearches").prepend(newCard);
 
-// Add the previous search as text to the card
-newCard.text(searchHistory[i])
+    // Add the previous search as text to the card
+    newCard.text(searchHistory[i])
 
-// Create an array to check how many cards
-var cardArray = $(".newCard");
+    // Create an array to check how many cards
+    var cardArray = $(".newCard");
 
 }
 
@@ -69,11 +69,20 @@ $("#searchWeather").on("click", function (event) {
         method: "GET"
     }).then(function (weatherData) {
 
+        // Get Icon Number to display Icon
+        var iconNumber = weatherData.weather[0].icon;
+
+        // Set icon number for URL for icon image
+        var iconURL = "http://openweathermap.org/img/w/" + iconNumber + ".png";
+
+        // Set Icon URL
+        $('#icon').attr('src', iconURL);
+
         // Entering current Weather Info
         var currentTempF = (((weatherData.main.temp) - 273.15) * 9 / 5 + 32);
 
         var currentTempFCut = currentTempF.toFixed(2);
-        
+
         $("#currentTemp").text("Temperature: " + currentTempFCut + "°F");
 
         $("#currentHumidity").text("Humidity: " + weatherData.main.humidity + "%");
@@ -226,11 +235,6 @@ $("#searchWeather").on("click", function (event) {
 
             console.log(weatherForecastData.list[0].weather[0].icon);
 
-            //Type of weather for next day Description
-
-            console.log(weatherForecastData.list[0].weather[0].description);
-
-
             //Calling API for UV index
             var APIKey = "c1062a71be569dde5d7f4b6638152083";
 
@@ -299,10 +303,10 @@ $("#searchWeather").on("click", function (event) {
 $(".newCard").on("click", function (event) {
     event.preventDefault();
 
-    for (var i = 0; i < searchHistory.length; i++){
+    for (var i = 0; i < searchHistory.length; i++) {
         $(".newCard").removeClass("bg-dark text-light");
     }
-    
+
     $(this).addClass("bg-dark text-light");
 
     var location = $(this).text().trim();
@@ -321,11 +325,20 @@ $(".newCard").on("click", function (event) {
         method: "GET"
     }).then(function (weatherData) {
 
+        // Get Icon Number to display Icon
+        var iconNumber = weatherData.weather[0].icon;
+
+        // Set icon number for URL for icon image
+        var iconURL = "http://openweathermap.org/img/w/" + iconNumber + ".png";
+
+        // Set Icon URL
+        $('#icon').attr('src', iconURL);
+
         // Entering current Weather Info
         var currentTempF = ((weatherData.main.temp) - 273.15) * 9 / 5 + 32;
 
         var currentTempFCut = currentTempF.toFixed(2);
-        
+
         $("#currentTemp").text("Temperature: " + currentTempFCut + "°F");
 
         $("#currentHumidity").text("Humidity: " + weatherData.main.humidity + "%");
