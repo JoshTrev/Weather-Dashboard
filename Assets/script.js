@@ -238,7 +238,7 @@ $("#searchWeather").on("click", function (event) {
             //Calling API for UV index
             var APIKey = "c1062a71be569dde5d7f4b6638152083";
 
-            var queryURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + lat + "&lon=" + lon;
+            var queryURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + lat + "&lon=" + lon;
 
             $.ajax({
                 url: queryURL,
