@@ -27,7 +27,7 @@ if (searchHistory == null){
 for (var i = 0; i < searchHistory.length; i++){
 
 // Create a new card to store previous search
-var newCard = $("<div class='card rounded shadow-sm newCard'></div>");
+var newCard = $("<div class='card rounded shadow-sm newCard font-weight-bold'></div>");
 
 // Add the new card
 $("#previousSearches").prepend(newCard);
@@ -66,7 +66,11 @@ $("#searchWeather").on("click", function (event) {
     }).then(function (weatherData) {
 
         // Entering current Weather Info
-        $("#currentTemp").text("Temperature: " + weatherData.main.temp + "°F");
+        var currentTempF = (((weatherData.main.temp) - 273.15) * 9 / 5 + 32);
+
+        var currentTempFCut = currentTempF.toFixed(2);
+        
+        $("#currentTemp").text("Temperature: " + currentTempFCut + "°F");
 
         $("#currentHumidity").text("Humidity: " + weatherData.main.humidity + "%");
 
@@ -177,10 +181,8 @@ $("#searchWeather").on("click", function (event) {
         });
     });
 
-    console.log(location);
-
     // Create a new card to store previous search
-    var newCard = $("<div class='card rounded shadow-sm newCard'></div>");
+    var newCard = $("<div class='card rounded shadow-sm newCard font-weight-bold'></div>");
 
     // Add the new card
     $("#previousSearches").prepend(newCard);
@@ -216,6 +218,12 @@ $("#searchWeather").on("click", function (event) {
 $(".newCard").on("click", function (event) {
     event.preventDefault();
 
+    for (var i = 0; i < searchHistory.length; i++){
+        $(".newCard").removeClass("bg-dark text-light");
+    }
+    
+    $(this).addClass("bg-dark text-light");
+
     var location = $(this).text().trim();
 
     console.log(location);
@@ -233,7 +241,11 @@ $(".newCard").on("click", function (event) {
     }).then(function (weatherData) {
 
         // Entering current Weather Info
-        $("#currentTemp").text("Temperature: " + weatherData.main.temp + "°F");
+        var currentTempF = ((weatherData.main.temp) - 273.15) * 9 / 5 + 32;
+
+        var currentTempFCut = currentTempF.toFixed(2);
+        
+        $("#currentTemp").text("Temperature: " + currentTempFCut + "°F");
 
         $("#currentHumidity").text("Humidity: " + weatherData.main.humidity + "%");
 

@@ -92,6 +92,11 @@ h1{
     color: red;
 }
 
+.newCard{
+    padding-left: 10px;
+    padding-top: 11px;
+}
+
 @media (min-width: 1px){
     .container{
         padding-right:0;
