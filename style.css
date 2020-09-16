@@ -1,0 +1,104 @@
+#leftColDiv{
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+    padding-top: 15px;
+
+    width: 500px;
+}
+
+#currentLocationStatsDiv{
+    height: 300px;
+}
+
+#currentLocationStatsCard{
+    width: 100%;
+    height: 225px;
+}
+
+#locationSearchBar{
+    margin-bottom: 15px;
+}
+
+#cardTop{
+    width: 200px;
+}
+
+#cardMiddle{
+    height: 150px;
+    width: 200px;
+    background-color: black;
+}
+
+#cardBottom{
+    width: 200px;
+}
+
+#mainContent{
+    width: 100%;
+}
+
+.container{
+    padding-right:0;
+    padding-left:0;
+    margin-right:auto;
+    margin-left:auto;
+    width: 100%;
+}
+
+.card{
+    height: 50px;
+    margin-top: 5px;
+}
+
+.top{
+    padding-top: 5px;
+    padding-left: 10px;
+    margin-bottom: 0;
+}
+
+.center{
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+.currentLocationP{
+    padding-left: 10px;
+}
+
+h1{
+    padding-left: 10px;
+}
+
+.navbar{
+    height: 100px;
+}
+
+.navbar-brand {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+}
+
+.greenUV{
+    color: green;
+}
+
+.yellowUV{
+    color: yellow;
+}
+
+.redUV{
+    color: red;
+}
+
+@media (min-width: 1px){
+    .container{
+        padding-right:0;
+        padding-left:0;
+        margin-right:auto;
+        margin-left:auto;
+        width: 100%;
+        max-width: 100%;
+    }
+}
