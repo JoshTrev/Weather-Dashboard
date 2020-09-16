@@ -11,6 +11,10 @@ var weatherPartlyCloudy = ["Assets/PartlyCloudy1.jpeg", "Assets/PartlyCloudy2.pn
 var weatherCloudy = ["Assets/Cloudy1.jpg", "Assets/Cloudy2.jpg", "Assets/Cloudy3.jpg"];
 var weatherRainy = ["Assets/Rainy1.png", "Assets/Rainy2.png", "Assets/Rainy3.jpg"];
 var weatherThunderstorm = ["Assets/ThunderStorm1.jpg", "Assets/ThunderStorm2.jpg", "Assets/ThunderStorm3.jpg"];
+var weatherSnow = ["Assets/Snow1.jpg", "Assets/Snow2.webp", "Assets/Snow3.webp"];
+var weatherMist = ["Assets/Mist1.jpg", "Assets/Mist2.jpg", "Assets/Mist3.jpg"];
+var weatherSmog = ["Assets/Smog-Dust1.jpg", "Assets/Smog-Dust2.jpg", "Assets/Smog-Dust3.jpg"];
+var weatherTornado = ["Assets/Tornado1.jpg", "Assets/Tornado2.jpg", "Assets/Tornado3.jpg"];
 
 // Check Local Storage
 
@@ -112,7 +116,21 @@ $("#searchWeather").on("click", function (event) {
                     $(".fiveDayCardImg").eq(i).attr("src", weatherCloudy[randomNum]);
                 }
 
+                else if (weatherForecastData.list[i].weather[0].main === "Drizzle") {
+
+                    var randomNum = Math.floor(Math.random() * 3);
+
+                    $(".fiveDayCardImg").eq(i).attr("src", weatherRainy[randomNum]);
+                }
+
                 else if (weatherForecastData.list[i].weather[0].main === "Rain") {
+
+                    var randomNum = Math.floor(Math.random() * 3);
+
+                    $(".fiveDayCardImg").eq(i).attr("src", weatherRainy[randomNum]);
+                }
+
+                else if (weatherForecastData.list[i].weather[0].main === "Squall") {
 
                     var randomNum = Math.floor(Math.random() * 3);
 
@@ -124,6 +142,69 @@ $("#searchWeather").on("click", function (event) {
                     var randomNum = Math.floor(Math.random() * 3);
 
                     $(".fiveDayCardImg").eq(i).attr("src", weatherThunderstorm[randomNum]);
+                }
+
+                else if (weatherForecastData.list[i].weather[0].main === "Snow") {
+
+                    var randomNum = Math.floor(Math.random() * 3);
+
+                    $(".fiveDayCardImg").eq(i).attr("src", weatherSnow[randomNum]);
+                }
+
+                else if (weatherForecastData.list[i].weather[0].main === "Mist") {
+
+                    var randomNum = Math.floor(Math.random() * 3);
+
+                    $(".fiveDayCardImg").eq(i).attr("src", weatherMist[randomNum]);
+                }
+
+                else if (weatherForecastData.list[i].weather[0].main === "Fog") {
+
+                    var randomNum = Math.floor(Math.random() * 3);
+
+                    $(".fiveDayCardImg").eq(i).attr("src", weatherMist[randomNum]);
+                }
+
+                else if (weatherForecastData.list[i].weather[0].main === "Smog") {
+
+                    var randomNum = Math.floor(Math.random() * 3);
+
+                    $(".fiveDayCardImg").eq(i).attr("src", weatherMist[randomNum]);
+                }
+
+                else if (weatherForecastData.list[i].weather[0].main === "Haze") {
+
+                    var randomNum = Math.floor(Math.random() * 3);
+
+                    $(".fiveDayCardImg").eq(i).attr("src", weatherMist[randomNum]);
+                }
+
+                else if (weatherForecastData.list[i].weather[0].main === "Dust") {
+
+                    var randomNum = Math.floor(Math.random() * 3);
+
+                    $(".fiveDayCardImg").eq(i).attr("src", weatherMist[randomNum]);
+                }
+
+                else if (weatherForecastData.list[i].weather[0].main === "Sand") {
+
+                    var randomNum = Math.floor(Math.random() * 3);
+
+                    $(".fiveDayCardImg").eq(i).attr("src", weatherMist[randomNum]);
+                }
+
+                else if (weatherForecastData.list[i].weather[0].main === "Dust") {
+
+                    var randomNum = Math.floor(Math.random() * 3);
+
+                    $(".fiveDayCardImg").eq(i).attr("src", weatherMist[randomNum]);
+                }
+
+                else if (weatherForecastData.list[i].weather[0].main === "Ash") {
+
+                    var randomNum = Math.floor(Math.random() * 3);
+
+                    $(".fiveDayCardImg").eq(i).attr("src", weatherMist[randomNum]);
                 }
             }
 
