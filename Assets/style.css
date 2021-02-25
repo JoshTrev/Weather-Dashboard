@@ -107,6 +107,8 @@ h1{
 .newCard{
     padding-left: 10px;
     padding-top: 11px;
+
+    width: 100%;
 }
 
 @media (min-width: 1px){
