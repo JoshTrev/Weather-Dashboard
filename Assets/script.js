@@ -89,6 +89,10 @@ $(document).ready(function () {
     $("#searchWeather").on("click", function (event) {
         event.preventDefault();
 
+        if ($("#inputWeather").val().trim() === "" || $("#inputWeather").val().trim() === undefined || $("#inputWeather").val().trim() === null){
+            return;
+        }
+
         // var location = $("#inputWeather").val().trim();
 
         // alert($("#inputWeather").val())
@@ -96,7 +100,6 @@ $(document).ready(function () {
         SearchLocationWeather($("#inputWeather").val());
 
         CreateNewSearchHistoryCard($("#inputWeather").val());
-
     });
 
 
@@ -137,6 +140,23 @@ $(document).ready(function () {
         $(".newCard").removeClass("bg-dark text-light");
 
     }
+
+
+
+
+
+    // Clear Search History
+    
+    $("#clearHistory").on("click", function (event) {
+        event.preventDefault();
+
+        console.log("Clearing Search History");
+
+        localStorage.clear();
+
+        $(".newCard").remove();
+
+    });    
 
 
 
@@ -413,7 +433,7 @@ $(document).ready(function () {
         }
     };
 
-    if (searchHistory.length > 0){
+    if (searchHistory.length > 0 && searchHistory[searchHistory.length - 1] !== "" && searchHistory[searchHistory.length - 1] !== undefined && searchHistory[searchHistory.length - 1] !== null){
         SearchLocationWeather(searchHistory[searchHistory.length - 1]);
     }
 

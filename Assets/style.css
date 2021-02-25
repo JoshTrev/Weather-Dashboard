@@ -50,6 +50,10 @@
     width: 100%;
 }
 
+#searchWeather{
+    margin-right: .5rem
+}
+
 .container{
     padding-right:0;
     padding-left:0;
