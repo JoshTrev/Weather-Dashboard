@@ -5,3 +5,5 @@ For this assignment I was tasked with creating a one page project allowing the u
 ## Link
 
 https://joshtrev.github.io/Weather-Dashboard/
+
+![WeatherDashboardImg](https://user-images.githubusercontent.com/69084772/109325694-3b101e80-7824-11eb-9e7b-70a32138b0e2.png)
