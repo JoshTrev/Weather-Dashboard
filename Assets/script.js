@@ -204,7 +204,7 @@ $(document).ready(function () {
             var iconNumber = weatherData.weather[0].icon;
 
             // Set icon number for URL for icon image
-            var iconURL = "http://openweathermap.org/img/w/" + iconNumber + ".png";
+            var iconURL = "https://openweathermap.org/img/w/" + iconNumber + ".png";
 
             // Set Icon URL
             $('#icon').attr('src', iconURL);
@@ -372,7 +372,7 @@ $(document).ready(function () {
                 //Calling API for UV index
                 var APIKey = "c1062a71be569dde5d7f4b6638152083";
 
-                var queryURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + lat + "&lon=" + lon;
+                var queryURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + lat + "&lon=" + lon;
 
                 $.ajax({
                     url: queryURL,
