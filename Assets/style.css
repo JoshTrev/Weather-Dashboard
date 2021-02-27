@@ -164,6 +164,7 @@ h1{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 1em;
+    margin-top: 2rem;
 }
 
 .img-fluid{
@@ -284,18 +285,31 @@ h1{
         width: 100%;
     }
 
-    .grid-five-day-weather{
-        margin-top: 1rem;
-    }
-
     #currentLocationStatsCard1 h1{
         font-size: 7vw;
+    }
+
+    .fiveDayCardImg{
+        width: 100%;
+        height: 150px;
+    }
+}
+
+@media (min-width: 350px){
+    .fiveDayCardImg{
+        width: 100%;
+        height: 175px;
     }
 }
 
 @media (min-width: 400px){
     #currentLocationStatsCard1 h1{
         font-size: 6vw;
+    }
+
+    .fiveDayCardImg{
+        width: 100%;
+        height: 200px;
     }
 }
 
@@ -343,8 +357,8 @@ h1{
         width: 200px;
     }
 
-    .grid-five-day-weather{
-        margin-top: 2rem;
+    .fiveDayCardImg{
+        height: 150px;
     }
 }
 
