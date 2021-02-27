@@ -48,6 +48,20 @@ $(document).ready(function () {
         numberOfPreviousSearches = searchHistory.length;
     }
 
+    // Hide / Show Clear History Button
+
+    if (numberOfPreviousSearches == 0 || numberOfPreviousSearches == undefined || numberOfPreviousSearches == null){
+
+        $("#clearHistory").addClass("hide-button");
+        $("#searchWeather").addClass("searchWeather-no-history");
+
+    }
+
+    else {
+        $("#clearHistory").removeClass("hide-button");
+        $("#searchWeather").removeClass("searchWeather-no-history");
+    }
+
     // Create Previous Search Results
 
     for (var i = 0; i < numberOfPreviousSearches; i++) {
@@ -155,6 +169,10 @@ $(document).ready(function () {
         localStorage.clear();
 
         $(".newCard").remove();
+
+        $("#clearHistory").addClass("hide-button");
+
+        $("#searchWeather").addClass("searchWeather-no-history");
 
     });    
 
@@ -418,6 +436,10 @@ $(document).ready(function () {
 
         // Update local storage
         localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+
+        $("#clearHistory").removeClass("hide-button");
+
+        $("#searchWeather").removeClass("searchWeather-no-history");
 
         if (cardArray.length > 10) {
 

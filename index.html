@@ -36,21 +36,20 @@
     </nav>
 
     <!-- Main Content Container -->
-    <div class="container">
-        <div class="row" id="mainContent">
+    <div class="grid-main">
 
             <!-- Left Side Content -->
-            <div class="col-4 bg-light" id="leftColDiv">
+            <div class="bg-light" id="leftColDiv">
 
                 <!-- Search Bar -->
 
-                <h2>Search for a City:</h2>
+                <h2 id="search-location-header">Search for a City:</h2>
 
-                <form class="form-inline" id="locationSearchBar">
+                <form id="locationSearchBar">
                     <input class="form-control mr-sm-2 shadow-sm" id="inputWeather" type="search" placeholder="Search"
                         aria-label="Search">
-                    <button class="btn btn-primary my-2 my-sm-0 shadow-sm" id="searchWeather" type="submit">Search</button>
-                    <button class="btn btn-danger my-2 my-sm-0 shadow-sm" id="clearHistory" type="submit">Clear History</button>
+                    <button class="btn btn-primary my-2 my-sm-0 shadow-sm searchWeather-no-history" id="searchWeather" type="submit">Search</button>
+                    <button class="btn btn-danger my-2 my-sm-0 shadow-sm hide-button" id="clearHistory" type="submit">Clear History</button>
                 </form>
 
                 <!-- Location Divs -->
@@ -60,92 +59,106 @@
             </div>
 
             <!-- Right Side Content -->
-            <div class="col-8" id="rightColDiv">
-
-                <div class="row" id="currentLocationStatsDiv">
-                    <div class="col-8">
-                        <div class="card rounded shadow-sm" id="currentLocationStatsCard">
+            <div id="rightColDiv">
+                <div class="grid-current-weather" id="currentLocationStatsDiv">
+                        <div class="card rounded shadow-sm" id="currentLocationStatsCard1">
                             <h1>Location and Date</h1>
                             <p class="currentLocationP font-weight-bold" id="currentTemp">Temperature</p>
                             <p class="currentLocationP font-weight-bold" id="currentHumidity">Humidity</p>
                             <p class="currentLocationP font-weight-bold" id="currentWind">Wind Speed</p>
                             <p class="currentLocationP font-weight-bold" id="currentUV">UV Index</p>
                         </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card rounded shadow-sm" id="currentLocationStatsCard">
+                        <div class="card rounded shadow-sm" id="currentLocationStatsCard2">
                             <img class="img-fluid" id="icon" src="">
                         </div>
-                    </div>
                 </div>
 
-                <div class="row" id="fiveDayForcastDiv">
+                <div class="grid-five-day-weather">
 
                     <!-- 5 Day Forcast -->
-                    <div class="col">
-                        <div class="row bg-dark text-light rounded-top" id="cardTop">
-                            <p class="text-light fiveDayCardName">Date</p>
+                    <div>
+                        <div class="day-item rounded shadow-sm">
+                            <div class="bg-dark text-light rounded-top" id="cardTop">
+                                <p class="text-light fiveDayCardName">Date</p>
+                            </div>
+                            <div id="cardMiddle">
+                                <img class="img-fluid fiveDayCardImg" src="" />
+                            </div>
+                            <div class="bg-light rounded-bottom" id="cardBottom">
+                                <p class="top font-weight-bold fiveDayTemp">Temperature:__________</p>
+                                <p class="center font-weight-bold fiveDayHumidity">Humidity:__________</p>
+                            </div>
                         </div>
-                        <div class="row" id="cardMiddle">
-                            <img class="img-fluid fiveDayCardImg" src="" />
-                        </div>
-                        <div class="row bg-light rounded-bottom" id="cardBottom">
-                            <p class="top font-weight-bold fiveDayTemp">Temperature:__________</p>
-                            <p class="center font-weight-bold fiveDayHumidity">Humidity:__________</p>
+                    </div>
+                    
+
+                    <div>
+                        <div class="day-item rounded shadow-sm">
+                            <div class="row bg-dark text-light rounded-top" id="cardTop">
+                                <p class="text-light fiveDayCardName">Date</p>
+                            </div>
+                            <div class="row" id="cardMiddle">
+                                <img class="img-fluid fiveDayCardImg" src="" />
+                            </div>
+                            <div class="row bg-light rounded-bottom" id="cardBottom">
+                                <p class="top font-weight-bold fiveDayTemp">Temperature:__________</p>
+                                <p class="center font-weight-bold fiveDayHumidity">Humidity:__________</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col">
-                        <div class="row bg-dark text-light rounded-top" id="cardTop">
-                            <p class="text-light fiveDayCardName">Date</p>
-                        </div>
-                        <div class="row" id="cardMiddle">
-                            <img class="img-fluid fiveDayCardImg" src="" />
-                        </div>
-                        <div class="row bg-light rounded-bottom" id="cardBottom">
-                            <p class="top font-weight-bold fiveDayTemp">Temperature:__________</p>
-                            <p class="center font-weight-bold fiveDayHumidity">Humidity:__________</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row bg-dark text-light rounded-top" id="cardTop">
-                            <p class="text-light fiveDayCardName">Date</p>
-                        </div>
-                        <div class="row" id="cardMiddle">
-                            <img class="img-fluid fiveDayCardImg" src="" />
-                        </div>
-                        <div class="row bg-light rounded-bottom" id="cardBottom">
-                            <p class="top font-weight-bold fiveDayTemp">Temperature:__________</p>
-                            <p class="center font-weight-bold fiveDayHumidity">Humidity:__________</p>
+
+                    <div>
+                        <div class="day-item rounded shadow-sm">
+                            <div class="row bg-dark text-light rounded-top" id="cardTop">
+                                <p class="text-light fiveDayCardName">Date</p>
+                            </div>
+                            <div class="row" id="cardMiddle">
+                                <img class="img-fluid fiveDayCardImg" src="" />
+                            </div>
+                            <div class="row bg-light rounded-bottom" id="cardBottom">
+                                <p class="top font-weight-bold fiveDayTemp">Temperature:__________</p>
+                                <p class="center font-weight-bold fiveDayHumidity">Humidity:__________</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="row bg-dark text-light rounded-top" id="cardTop">
-                            <p class="text-light fiveDayCardName">Date</p>
-                        </div>
-                        <div class="row" id="cardMiddle">
-                            <img class="img-fluid fiveDayCardImg" src="" />
-                        </div>
-                        <div class="row bg-light rounded-bottom" id="cardBottom">
-                            <p class="top font-weight-bold fiveDayTemp">Temperature:__________</p>
-                            <p class="center font-weight-bold fiveDayHumidity">Humidity:__________</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row bg-dark text-light rounded-top" id="cardTop">
-                            <p class="text-light fiveDayCardName">Date</p>
-                        </div>
-                        <div class="row" id="cardMiddle">
-                            <img class="img-fluid fiveDayCardImg" src="" />
-                        </div>
-                        <div class="row bg-light rounded-bottom" id="cardBottom">
-                            <p class="top font-weight-bold fiveDayTemp">Temperature:__________</p>
-                            <p class="center font-weight-bold fiveDayHumidity">Humidity:__________</p>
+
+
+                    <div>
+                        <div class="day-item rounded shadow-sm">
+                            <div class="row bg-dark text-light rounded-top" id="cardTop">
+                                <p class="text-light fiveDayCardName">Date</p>
+                            </div>
+                            <div class="row" id="cardMiddle">
+                                <img class="img-fluid fiveDayCardImg" src="" />
+                            </div>
+                            <div class="row bg-light rounded-bottom" id="cardBottom">
+                                <p class="top font-weight-bold fiveDayTemp">Temperature:__________</p>
+                                <p class="center font-weight-bold fiveDayHumidity">Humidity:__________</p>
+                            </div>
                         </div>
                     </div>
+
+
+                    <div>
+                        <div class="day-item rounded shadow-sm">
+                            <div class="row bg-dark text-light rounded-top" id="cardTop">
+                                <p class="text-light fiveDayCardName">Date</p>
+                            </div>
+                            <div class="row" id="cardMiddle">
+                                <img class="img-fluid fiveDayCardImg" src="" />
+                            </div>
+                            <div class="row bg-light rounded-bottom" id="cardBottom">
+                                <p class="top font-weight-bold fiveDayTemp">Temperature:__________</p>
+                                <p class="center font-weight-bold fiveDayHumidity">Humidity:__________</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
                 </div>
             </div>
-        </div>
     </div>
     
     <!-- jQuery JS -->

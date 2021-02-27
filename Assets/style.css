@@ -1,20 +1,40 @@
-#leftColDiv{
-    padding-left: 25px;
-    padding-bottom: 25px;
-    padding-right: 25px;
-    padding-top: 15px;
+/* body{
+    overflow-x: hidden;
+} */
 
-    width: 500px;
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
-#currentLocationStatsDiv{
-    height: 300px;
+#search-location-header{
+    margin-top: 1rem;
+    
+    clear: both;
 }
 
-#currentLocationStatsCard{
+.card{
+    margin-top: 0 !important;
+    background-color: #f8f9fa;
+}
+
+.navbar-brand{
+    white-space: normal !important;
+}
+
+/* #currentLocationStatsDiv{
+    min-height: 300px;
+} */
+
+#currentLocationStatsCard1{
+    width: 100%;
+    /* height: 225px; */
+}
+
+/* #currentLocationStatsCard2{
     width: 100%;
     height: 225px;
-}
+} */
 
 /* .currentLocationStatsIcon{
     width: 100%;
@@ -29,10 +49,10 @@
 }
 
 #locationSearchBar{
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
-#cardTop{
+/* #cardTop{
     width: 200px;
 }
 
@@ -44,14 +64,17 @@
 
 #cardBottom{
     width: 200px;
-}
+} */
 
-#mainContent{
+/* #mainContent{
     width: 100%;
+} */
+#inputWeather{
+    margin-top: 0.5rem !important;
 }
 
-#searchWeather{
-    margin-right: .5rem
+.hide-button{
+    display: none;
 }
 
 .container{
@@ -62,7 +85,7 @@
     width: 100%;
 }
 
-.card{
+#previousSearches .card{
     height: 50px;
     margin-top: 5px;
 }
@@ -112,8 +135,65 @@ h1{
     padding-left: 10px;
     padding-top: 11px;
 
+    margin-bottom: 0.5rem;
+
     width: 100%;
 }
+
+#currentUV{
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+
+/* .grid-main{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 2rem;
+
+    margin-right: 2rem;
+} */
+
+/* .grid-current-weather{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 2rem;
+} */
+
+.grid-five-day-weather{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1em;
+}
+
+.img-fluid{
+    margin-left: auto;
+    margin-left: auto;
+}
+
+.fiveDayCardName{
+
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.4rem;
+}
+
+.day-item{
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+/* #currentLocationStatsCard1 h1{
+    font-size: 2.5vw;
+} */
+
+/* #currentLocationStatsCard1 .card{
+    height: auto;
+} */
+
+
+
+
 
 @media (min-width: 1px){
     .container{
@@ -123,5 +203,204 @@ h1{
         margin-left:auto;
         width: 100%;
         max-width: 100%;
+    }
+
+    .grid-main{
+        display: block;
+
+        margin-right: 0;
+    }
+
+    #rightColDiv{
+        margin-right: 2rem;
+        margin-left: 2rem;
+        margin-top: 1rem;
+        clear: both;
+    }
+
+    #leftColDiv{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .navbar-brand{
+        font-size: 7vw;
+    }
+
+    .form-control{
+        width: 100%;
+        margin-right: 0;
+        float: left;
+    }
+
+    #searchWeather{
+        margin-right: 0;
+        margin-top: 0.5rem !important;
+        width: 49%;
+        float: left;
+    }
+
+    .searchWeather-no-history{
+        width: 100% !important;
+    }
+
+    #clearHistory{
+        margin-top: 0.5rem !important;
+        width: 49%;
+        float: right;
+    }
+
+    #currentLocationStatsCard2{
+        width: 100%;
+        height: auto;
+
+        display: none;
+    }
+
+    .grid-current-weather{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+    }
+
+    #cardTop{
+        width: 100%;
+        height: 40px;
+    }
+    
+    #cardMiddle{
+        height: auto;
+        width: 100%;
+        background-color: black;
+    }
+    
+    #cardBottom{
+        width: 100%;
+        height: 58px;
+    }
+
+    .day-item{
+        width: 100%;
+    }
+
+    .grid-five-day-weather{
+        margin-top: 1rem;
+    }
+
+    #currentLocationStatsCard1 h1{
+        font-size: 7vw;
+    }
+}
+
+@media (min-width: 400px){
+    #currentLocationStatsCard1 h1{
+        font-size: 6vw;
+    }
+}
+
+@media (min-width: 470px){
+    .form-control{
+        width: auto;
+        margin-right: 8px;
+        float: left;
+    }
+
+    #searchWeather{
+        margin-right: .2rem;
+        margin-top: 0.5rem !important;
+        width: auto;
+        float: none;
+    }
+
+    .searchWeather-no-history{
+        width: auto !important;
+    }
+
+    #clearHistory{
+        margin-top: 0.5rem !important;
+        width: auto;
+        float: none;
+    }
+}
+
+@media (min-width: 480px){
+    #cardTop{
+        width: 200px;
+    }
+    
+    #cardMiddle{
+        height: 150px;
+        width: 200px;
+        background-color: black;
+    }
+    
+    #cardBottom{
+        width: 200px;
+    }
+
+    .day-item{
+        width: 200px;
+    }
+
+    .grid-five-day-weather{
+        margin-top: 2rem;
+    }
+}
+
+@media (min-width: 600px){
+    .navbar-brand{
+        font-size: 50px;
+    }
+
+    #currentLocationStatsCard1 h1{
+        font-size: 5vw;
+    }
+}
+
+@media (min-width: 800px){
+    #currentLocationStatsCard1 h1{
+        font-size: 4vw;
+    }
+}
+
+@media (min-width: 1000px){
+    .grid-main{
+        display: grid;
+        grid-template-columns: 469px 3fr;
+        grid-gap: 2rem;
+    
+        margin-right: 2rem;
+    }
+
+    #rightColDiv{
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    #leftColDiv{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .navbar-brand{
+        font-size: 50px;
+    }
+
+    #currentLocationStatsCard2{
+        width: 100%;
+        height: auto;
+
+        display: flex;
+    }
+
+    .grid-current-weather{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 2rem;
+    }
+
+    #currentLocationStatsCard1 h1{
+        font-size: 2.5vw;
     }
 }
